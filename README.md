@@ -1,4 +1,4 @@
 scripts
 =======
+**This repository contains the scripts used for DIKULAN**
 
-This repository contains the scripts used for DIKULAN
