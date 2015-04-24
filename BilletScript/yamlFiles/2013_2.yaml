@@ -1,0 +1,9 @@
+---
+ticketImage: "tickets/billet2013kirby.png"
+fontPath: "fonts/PressStart2P.ttf"
+fontSize: 30
+
+fontColor: [111, 69, 59]
+textCenter: [350, 310]
+
+

@@ -1,0 +1,6 @@
+*~
+*.pyc
+latex/*
+!latex/template.tex
+!latex/tickets
+

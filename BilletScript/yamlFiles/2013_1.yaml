@@ -1,0 +1,17 @@
+---
+ticketImage: "tickets/billet2013_1.png"
+fontPath: "fonts/5thagent.ttf"
+fontSize: 25
+
+fontColor: [255, 255, 255]
+textCenter: [200, 242]
+
+---
+ticketImage: "tickets/billet2013_2.png"
+fontPath: "fonts/5thagent.ttf"
+fontSize: 25
+
+fontColor: [255, 255, 255]
+textCenter: [400, 242]
+
+

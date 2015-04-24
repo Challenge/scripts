@@ -1,0 +1,9 @@
+---
+ticketImage: "tickets/billet2014HearthStone.png"
+fontPath: "fonts/Anonymous Pro B.ttf"
+fontSize: 35
+
+fontColor: [255, 255, 255]
+textCenter: [480, 460]
+
+
