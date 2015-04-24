@@ -3,7 +3,7 @@ ticketImage: "tickets/billet2015cs.jpg"
 fontPath: "fonts/Anonymous Pro B.ttf"
 fontSize: 35
 
-fontColor: [255, 255, 255]
-textCenter: [350, 320]
+fontColor: [0, 0, 0]
+textCenter: [393, 307]
 
 

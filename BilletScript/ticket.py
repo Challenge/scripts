@@ -17,8 +17,8 @@ def doTicket(ticketId, values):
 
      (txc, tyc) = textCenter = tuple(values['textCenter'])
 
-     tick = "Billet-ID:" + ticketId
-     moreInfo = "Se mere information paa dikulan.dk"
+     tick = ticketId
+     #moreInfo = "Se mere information paa dikulan.dk"
 
      if not os.path.exists(outputImagePath):
           os.makedirs(outputImagePath)
@@ -27,5 +27,5 @@ def doTicket(ticketId, values):
      lineOffset = fontSize;
 
      drawStringOnImage(ticketImage, tick, font, color, textCenter, outputImage)
-     drawStringOnImage(outputImage, moreInfo, font, color, (txc,tyc + lineOffset), outputImage)
+     #drawStringOnImage(outputImage, moreInfo, font, color, (txc,tyc + lineOffset), outputImage)
 
