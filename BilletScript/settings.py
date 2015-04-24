@@ -1,6 +1,6 @@
 #Ticket Settings
-ticketIdPath = "ticketIDs/ticketID_2014_1.txt" # file
-yamlPath = "yamlFiles/2014_1.yaml" # directory/file
+ticketIdPath = "ticketIDs/ticketID_2015_1.txt" # file
+yamlPath = "yamlFiles/2015_1.yaml" # directory/file
 
 #Latex template settings
 latexPath = "latex" #Directory
