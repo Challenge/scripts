@@ -1,5 +1,6 @@
 import requests
 import re
+from time import sleep
 
 SITE = 'http://10.0.0.1'
 
@@ -39,8 +40,9 @@ def get_users():
     for (u,i,g) in zip(usernames,ids,groups):
         USERIDS[u] = { 'id' : int(i), 'group' : g.strip() }
 
-def adduser(name, passwd):
+def add_user(name, passwd):
     """Add a user under the 'user' group"""
+    print "Adding user: %s, with password: %s" % (name, passwd)
     action = '/system_usermanager.php?act=new'
     form = { 'usernamefld' : name
            , 'passwordfld1' : passwd
@@ -54,15 +56,34 @@ def adduser(name, passwd):
 
     s.post(SITE + action, form)
 
-def deluser(name):
+def del_user(name, attempt=0):
     """Delete all members of the 'user' group"""
+    if attempt > 3:
+        print "Deleting user: %s failed" % name
+        return
+
     userid = USERIDS[name]['id']
     assert userid >= 0
-    s.get(SITE + '/system_usermanager.php?act=deluser&id=%d' % userid)
+    print "Deleting user: %s, with id: %d" % (name, userid)
+    res = s.get(SITE + '/system_usermanager.php?act=deluser&id=%d' % userid)
+    ids = map(int, re.findall('act=edit&amp;id=(\d+)"', res.text))
+    if userid in ids:
+        print "Delete failed, trying again.."
+        sleep(1)
+        del_user(name, attempt=attempt+1)
 
-def del_all_users_in_group():
-    for 
+def del_all_users_in_group(group):
+    uids = USERIDS
+    print "Deleting all users in group: %s" % (group)
+    for u,d in uids.items():
+        if d['group'] == group:
+            del_user(u)
+            del(USERIDS[u])
+    get_users()
 
+
+#for i in range(20):
+#    add_user('foo%d' % i, 'bar')
 get_users()
-print USERIDS
-adduser('test3', 'asdf')
+sleep(1)
+del_all_users_in_group('user')
