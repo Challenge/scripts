@@ -82,8 +82,5 @@ def del_all_users_in_group(group):
     get_users()
 
 
-#for i in range(20):
-#    add_user('foo%d' % i, 'bar')
+# Load current users
 get_users()
-sleep(1)
-del_all_users_in_group('user')
