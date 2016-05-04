@@ -1,4 +1,4 @@
-#import pfsense
+from pfsense import *
 import string
 import random
 
@@ -16,5 +16,5 @@ pws = [gen_pw() for _ in range(len(ticket_ids))]
 f = open('passwords.txt', 'a')
 f.write('Brugernavn, password\n')
 for i,pw in zip(ticket_ids, pws):
-    add_user(i,pw)
+    pfsense.add_user(i,pw)
     f.write('%s, %s\n' % (i,pw))
