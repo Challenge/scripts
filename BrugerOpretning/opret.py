@@ -1,4 +1,4 @@
-from pfsense import *
+import pfsense
 import string
 import random
 
